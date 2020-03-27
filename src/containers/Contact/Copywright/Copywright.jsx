@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import logo from './../../../assest/images/logo.png'
+import logo from './../../../static/images/logo.png'
 
 const Name = styled.div`
     color:var(--color-primary-3);

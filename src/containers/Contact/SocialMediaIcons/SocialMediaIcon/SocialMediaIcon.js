@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import svgpack from './../../../../assest/Icons/symbol-defs.svg';
+import svgpack from './../../../../static/Icons/symbol-defs.svg';
 const Icon = styled.a`
     display:inline-block;
     width:40px;

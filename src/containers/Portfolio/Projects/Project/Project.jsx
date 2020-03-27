@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../../../../components/Button/Button'
 import Skew from '../../../../components/textUtil/Skew/Skew'
-import svgpack from './../../../../assest/Icons/symbol-defs.svg';
+import svgpack from './../../../../static/Icons/symbol-defs.svg';
 
 const ProjectWrapper = styled.div`
     display:flex;

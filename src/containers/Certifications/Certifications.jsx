@@ -3,9 +3,9 @@ import Container from './../../components/Container/Container'
 import Title from './../../components/textUtil/Title/Title'
 import styled from 'styled-components'
 import Certificate from './Certificate/Certificate'
-import responsive from '../../assest/certificates/responsive.png'
-import js from '../../assest/certificates/js.png'
-import frontendlibraries from '../../assest/certificates/frontendlibraries.png'
+import responsive from '../../static/certificates/responsive.png'
+import js from '../../static/certificates/js.png'
+import frontendlibraries from '../../static/certificates/frontendlibraries.png'
 
 const Certificates = styled.div`
     display:flex;

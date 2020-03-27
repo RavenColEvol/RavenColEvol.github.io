@@ -1,9 +1,9 @@
 import React from 'react'
 import Project from './Project/Project'
-import boostrap from '../../../assest/projects/bootstrap.png'
-import reactMovie from '../../../assest/projects/react-movie.png'
-import blockchain from '../../../assest/projects/blockchain.png'
-import fuddulist from '../../../assest/projects/FudduList.PNG'
+import boostrap from '../../../static/projects/bootstrap.png'
+import reactMovie from '../../../static/projects/react-movie.png'
+import blockchain from '../../../static/projects/blockchain.png'
+import fuddulist from '../../../static/projects/fuddulist.png'
 const Projects = () => {
     return (
         <>
