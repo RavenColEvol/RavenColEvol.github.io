@@ -1,5 +1,4 @@
 import React from 'react'
-import {BrowserRouter} from 'react-router-dom';
 import NavItem from './NavItem/NavItem';
 import styled from 'styled-components';
 
@@ -15,14 +14,12 @@ const NavItemsWrapper = styled.div`
 
 const NavItems = ({clicked}) => {
     return (
-        <BrowserRouter>
-            <NavItemsWrapper>
-                <NavItem click={clicked} to="#about">About Me</NavItem>
-                <NavItem click={clicked} to="#portfolio">Portfolio</NavItem>
-                <NavItem click={clicked} to="#certifications">certifications</NavItem>
-                <NavItem click={clicked} to="#contact">contact</NavItem>            
-            </NavItemsWrapper>
-        </BrowserRouter>
+        <NavItemsWrapper>
+            <NavItem click={clicked} to="#about">About Me</NavItem>
+            <NavItem click={clicked} to="#portfolio">Portfolio</NavItem>
+            <NavItem click={clicked} to="#certifications">certifications</NavItem>
+            <NavItem click={clicked} to="#contact">contact</NavItem>            
+        </NavItemsWrapper>
     )
 }
 
