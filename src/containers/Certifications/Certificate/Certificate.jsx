@@ -9,6 +9,11 @@ const CertificateWrapper = styled.div`
 const Img = styled.img`
     width:350px;
     height:auto;
+    transition: .5s all ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+
     @media ${props=>props.theme.media.medium}
     {
         width:230px;

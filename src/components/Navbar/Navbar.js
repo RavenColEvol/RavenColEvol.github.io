@@ -14,7 +14,7 @@ const NavWrapper = styled.div`
     z-index:10;
     background:var(--color-dark-1);
     box-shadow:0 3px 2rem rgba(0,0,0,.18);
-    padding:0 7rem;
+    padding:0 10rem;
     display:flex;
     justify-content:space-between;
     align-items:center;
