@@ -7,7 +7,7 @@ import svgpack from './../../../../static/Icons/symbol-defs.svg';
 const ProjectWrapper = styled.div`
     display:flex;
     justify-content:center;
-    flex-direction:${props=>props.reverse?'row-reverse':'row'}
+    flex-direction:${props=>props.reverse?'row-reverse':'row'};
     margin-top:3rem;
     @media ${props=>props.theme.media.medium}
     {
