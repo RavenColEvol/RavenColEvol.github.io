@@ -1,16 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from '../../../static/images/logo.png'
-const LogoWrapper = styled.img`
-    height:45px;
-    width:auto;
-    opacity:.8;
-`
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 const Logo = () => {
-    return (
-        <LogoWrapper src={logo}/>
-    )
-}
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 55) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+  return <Img fixed={data.logo.childImageSharp.fixed} />;
+};
 
-export default Logo
+export default Logo;

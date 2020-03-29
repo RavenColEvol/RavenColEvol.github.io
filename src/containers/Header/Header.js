@@ -4,7 +4,7 @@ import HeaderContent from './HeaderContent/HeaderContent'
 
 const HeaderWrapper = styled.div`
     margin-top:4rem;
-    min-height:90vh;
+    min-height:80vh;
     width:100vw;
     display:flex;
     align-items:center;

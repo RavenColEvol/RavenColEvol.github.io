@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
+import Img from 'gatsby-image'
 import Skew from './../../../components/textUtil/Skew/Skew'
 
 const CertificateWrapper = styled.div`
     text-align:center;
     margin:1.5rem 0;
 `
-const Img = styled.img`
+const CertificateImg = styled(Img)`
     width:350px;
     height:auto;
     transition: .5s all ease-in-out;
@@ -30,7 +31,7 @@ const Img = styled.img`
 const Certificate = ({src,title}) => {
     return (
         <CertificateWrapper>
-            <Img src={src}></Img><br/>
+            <CertificateImg fluid={src}></CertificateImg><br/>
             <Skew>{title}</Skew>
         </CertificateWrapper>
     )

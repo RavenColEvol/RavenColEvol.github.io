@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 import Button from '../../../../components/Button/Button'
 import Skew from '../../../../components/textUtil/Skew/Skew'
 import svgpack from './../../../../static/Icons/symbol-defs.svg';
@@ -17,7 +18,7 @@ const ProjectWrapper = styled.div`
     }
 `
 
-const Img = styled.img`
+const ProjectImg = styled(Img)`
     width:500px;
     box-shadow:0 1rem 3rem rgba(0,0,0,.4);
     @media ${props=>props.theme.media.medium}
@@ -65,7 +66,7 @@ const Project = ({imgurl,children,link,stack,title,reverse}) => {
     <Center>
         <Skew>{title}</Skew>
         <ProjectWrapper reverse={reverse}>
-            <Img src={imgurl}></Img>
+            <ProjectImg fluid={imgurl}></ProjectImg>
             <Div>
                 <P>{children}</P>
                 <CenterMobile>
