@@ -23,11 +23,5 @@ module.exports = {
         displayName: false
       }
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        icon: `src/images/logo.ico`
-      }
-    }
   ]
 };
