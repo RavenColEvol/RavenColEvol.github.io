@@ -22,7 +22,7 @@ const SocialMediaIcons = () => {
         <NavIcons>
             <SocialMediaIcon href='https://github.com/RavenColEvol' icon="icon-github"/>
             <SocialMediaIcon href='https://in.linkedin.com/in/ravi-lamkoti-370285169' icon="icon-linkedin2"/>
-            <SocialMediaIcon href='' icon="icon-google-plus"/>
+            <SocialMediaIcon href='https://www.codechef.com/users/lamkoti' icon="icon-google-plus"/>
             <SocialMediaIcon href='https://www.instagram.com/nontoxic_raven' icon="icon-instagram"/>
         </NavIcons>
         </>

@@ -41,4 +41,9 @@ export default createGlobalStyle`
         text-decoration:none;
         border:none;
     }
+
+    ::selection {
+        background: ${props=>props.theme.colors['color-primary-lighter']};
+        color: var(--color-white-1);
+    }
 `

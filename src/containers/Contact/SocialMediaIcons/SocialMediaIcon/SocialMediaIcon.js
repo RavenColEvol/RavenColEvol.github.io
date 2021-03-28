@@ -28,9 +28,9 @@ const Icon = styled.a`
 
 const SocialMediaIcon = ({icon,href}) => {
     return (
-        <Icon href={href}>
+        <Icon href={href} target="_blank">
             <svg className={`icon ${icon}`}>
-                <use xlinkHref={`${svgpack}#${icon}`}> </use>
+                <use xlinkHref={`${svgpack}#${icon}`} > </use>
             </svg>
         </Icon>
     )

@@ -6,26 +6,39 @@ const BackTopIcon = styled.a`
     position:fixed;
     bottom:3rem;
     right:3rem;
+    z-index: 99;
     display:inline-block;
     background:var(--color-primary-1);
     color:white;
-    transition:.25s all linear;
+    transition:.2s opacity linear;
     border-radius:50%;
+    width:3rem;
+    height:3rem;
     @media ${props=>props.theme.media.medium}
     {
         bottom:1.5rem;
         right:1.5rem;
+        width: 2rem;
+        height: 2rem;
     }
     &.show{
-        width:2rem;
-        height:2rem;
         display:block;
+        pointer-events: all;
+        opacity: 1;
     }
     &.hide{
-        width:0;
-        height:0;
-        diplay:none;
-        font-size:0;
+        opacity: 0;
+        pointer-events: none;
+    }
+`
+
+const UpSvg = styled.svg`
+    width: 25px;
+    height: 25px;
+    @media ${props=>props.theme.media.medium}
+    {
+        width: 20px;
+        height: 20px;
     }
 `
 const Centered = styled.div`
@@ -50,9 +63,9 @@ const BackTop = () => {
     return (
         <BackTopIcon className={show?'show':'hide'} href="#header">
             <Centered>
-                <svg className={`icon icon-circle-up`} fill="white" width='20px' height='20px'>
+                <UpSvg className={`icon icon-circle-up`} fill="white">
                     <use xlinkHref={`${svgpack}#icon-circle-up`}> </use>
-                </svg>
+                </UpSvg>
             </Centered>
         </BackTopIcon>
     )

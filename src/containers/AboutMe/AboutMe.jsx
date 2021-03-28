@@ -6,11 +6,12 @@ import Marked from './../../components/textUtil/Marked/Marked'
 import Skew from './../../components/textUtil/Skew/Skew'
 
 const Para = styled.div`
-    margin:2rem 16rem;
+    margin:2rem auto;
     text-align:center;
     font-size:1rem;
     color:var(--color-white-2);
-
+    max-width: 60rem;
+    line-height: 1.8;
     @media ${props=>props.theme.media.medium}
     {
         margin:1rem 2rem;

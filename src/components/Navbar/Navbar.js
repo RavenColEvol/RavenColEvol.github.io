@@ -1,9 +1,10 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import styled from 'styled-components';
 import Logo from './Logo/Logo';
 import NavItems from './NavItems/NavItems';
 import Hamburger from './Hamburger/Hamburger';
 import SideDrawer from './SideDrawer/SideDrawer';
+import useResize from '../../utils/useResize';
 
 const NavWrapper = styled.div`
     position:fixed;
@@ -40,9 +41,19 @@ const DesktopView = styled.div`
 `
 const Navbar = () => {
     const [isOpen,setOpen] = useState(false);
+    const size = useResize();
+
     const handleOpen=()=>{
         setOpen(!isOpen);
     }
+
+    useEffect(() => {
+        const [x, y] = size;
+        if(x > 896) {
+            setOpen(false);
+        }
+    }, [size]);
+
     return (
         <>
             <NavWrapper>

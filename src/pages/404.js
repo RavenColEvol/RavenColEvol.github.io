@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () => {
+function PageNotFound() {
     return (
         <div>
             Sorry Ravi forgot to add this page ;( <br/>
@@ -8,3 +8,5 @@ export default () => {
         </div>
     )
 }
+
+export default PageNotFound;

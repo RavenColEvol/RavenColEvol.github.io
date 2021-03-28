@@ -8,7 +8,7 @@ import svgpack from './../../../../static/Icons/symbol-defs.svg';
 const ProjectWrapper = styled.div`
     display:flex;
     justify-content:center;
-    flex-direction:${props=>props.reverse?'row-reverse':'row'};
+    flex-direction:${props=>props.reverse ? 'row-reverse':'row'};
     margin-top:3rem;
     @media ${props=>props.theme.media.medium}
     {
@@ -28,8 +28,9 @@ const ProjectImg = styled(Img)`
 `
 const P = styled.p`
     max-width:500px;
-    font-size:.8rem;
+    font-size:.85rem;
     margin:1rem 0 1.5rem 0;
+    line-height: 1.8;
     @media ${props=>props.theme.media.medium}{
     }
 `
