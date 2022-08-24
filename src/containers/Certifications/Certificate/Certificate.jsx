@@ -10,7 +10,7 @@ const CertificateWrapper = styled.div`
 const CertificateImg = styled(Img)`
     width:350px;
     height:auto;
-    transition: .25s all ease-in-out;
+    transition: .35s all ease-out;
     &:hover {
         transform: scale(1.1);
     }

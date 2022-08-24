@@ -24,6 +24,10 @@ const Icon = styled.a`
         background:white;
         cursor:pointer;
     }
+
+    .icon {
+        max-height: 100%;
+    }
 `
 
 const SocialMediaIcon = ({icon,href}) => {

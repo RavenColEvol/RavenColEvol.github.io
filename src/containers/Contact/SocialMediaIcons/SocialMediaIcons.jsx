@@ -16,15 +16,23 @@ const P = styled.p`
     text-align:center;
 `
 const SocialMediaIcons = () => {
+    const socialMediaIcons = [
+        { icon: 'icon-github', href: 'https://github.com/RavenColEvol'},
+        { icon:"icon-linkedin2", href:'https://in.linkedin.com/in/ravi-lamkoti-370285169'},
+        { icon: "icon-google-plus", href: 'https://www.codechef.com/users/lamkoti' },
+        { icon: "icon-instagram", href: 'https://www.instagram.com/nontoxic_raven'},
+    ]
+
     return (
         <>
-        <P>ravilamkoti@gmail.com</P>
-        <NavIcons>
-            <SocialMediaIcon href='https://github.com/RavenColEvol' icon="icon-github"/>
-            <SocialMediaIcon href='https://in.linkedin.com/in/ravi-lamkoti-370285169' icon="icon-linkedin2"/>
-            <SocialMediaIcon href='https://www.codechef.com/users/lamkoti' icon="icon-google-plus"/>
-            <SocialMediaIcon href='https://www.instagram.com/nontoxic_raven' icon="icon-instagram"/>
-        </NavIcons>
+            <P>ravilamkoti@gmail.com</P>
+            <NavIcons>
+                { 
+                    socialMediaIcons.map(
+                        sm => <SocialMediaIcon href={sm.href} icon={sm.icon} />
+                    )
+                }
+            </NavIcons>
         </>
     )
 }

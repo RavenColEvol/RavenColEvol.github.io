@@ -44,17 +44,23 @@ const Certifications = () => {
             }
         } 
     `)
+    
+    const certificates = [
+        { src: data.responsive.childImageSharp.fluid, title: "Responsive Web Design" },
+        { src: data.js.childImageSharp.fluid, title:"JavaScript and Data Structures" },
+        { src: data.frontend.childImageSharp.fluid, title: "Front-End Libraries"}
+    ]
 
     return (
         <div id="certifications">
-        <Container>
-            <Title>Certifications</Title>
-            <Certificates>
-                <Certificate src={data.responsive.childImageSharp.fluid} title="Responsive Web Design"/>
-                <Certificate src={data.js.childImageSharp.fluid} title="JavaScript and Data Structures"/>
-                <Certificate src={data.frontend.childImageSharp.fluid} title="Front-End Libraries"/>
-            </Certificates>
-        </Container>
+            <Container>
+                <Title>Certifications</Title>
+                <Certificates>
+                    {
+                        certificates.map(certificate => <Certificate src={certificate.src} title={certificate.title} />)
+                    }
+                </Certificates>
+            </Container>
         </div>
     )
 }
