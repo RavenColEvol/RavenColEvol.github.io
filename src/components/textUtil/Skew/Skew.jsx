@@ -18,12 +18,12 @@ const P = styled.p`
     &:after{
         content:'';
         position:absolute;
-        top:0;
+        top:50%;
         left:0;
-        height:100%;
+        height:80%;
         width:100%;
         z-index:-1;
-        transform:rotateZ(-3deg);
+        transform:rotateZ(-3deg) translateY(-50%);
         background:var(--color-primary-1);
     }
 `
