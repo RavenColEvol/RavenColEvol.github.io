@@ -29,7 +29,7 @@ const SocialMediaIcons = () => {
             <NavIcons>
                 { 
                     socialMediaIcons.map(
-                        sm => <SocialMediaIcon href={sm.href} icon={sm.icon} />
+                        sm => <SocialMediaIcon key={sm.icon} href={sm.href} icon={sm.icon} />
                     )
                 }
             </NavIcons>

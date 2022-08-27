@@ -8,8 +8,9 @@ const HeaderWrapper = styled.div`
     width:100vw;
     display:flex;
     align-items:center;
-    color:white;
+    color:var(--color-white-1);
 `
+
 const Header = () => {
     return (
         <div id="header">

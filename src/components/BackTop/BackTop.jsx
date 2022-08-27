@@ -9,7 +9,7 @@ const BackTopIcon = styled.a`
     z-index: 99;
     display:inline-block;
     background:var(--color-primary-1);
-    color:white;
+    color:var(--color-white-1);
     transition:.2s opacity linear;
     border-radius:50%;
     width:3rem;

@@ -11,7 +11,7 @@ const Icon = styled.a`
     justify-content:center;
     align-items:center;
     border: 2px solid var(--color-primary-3);
-    fill:#fff;
+    fill:var(--color-white-1);
     padding:10px;
     transition:.25s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
@@ -20,8 +20,18 @@ const Icon = styled.a`
         margin:0 .5rem;
     }
     &:hover{
-        fill:var(--color-primary-2);
-        background:white;
+        ${props => {
+            const { currTheme } = props.theme;
+            const isLight = currTheme === 'light';
+            if(isLight) return `
+                fill:var(--color-dark-1);
+                background:var(--color-primary-2);
+            `
+            return `
+                fill:var(--color-primary-2);
+                background:var(--color-white-1);
+            `
+        }}
         cursor:pointer;
     }
 

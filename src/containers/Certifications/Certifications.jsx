@@ -57,7 +57,10 @@ const Certifications = () => {
                 <Title>Certifications</Title>
                 <Certificates>
                     {
-                        certificates.map(certificate => <Certificate src={certificate.src} title={certificate.title} />)
+                        certificates.map(
+                            certificate => 
+                            <Certificate key={certificate.title} src={certificate.src} title={certificate.title} />
+                        )
                     }
                 </Certificates>
             </Container>

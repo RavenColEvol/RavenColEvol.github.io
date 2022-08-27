@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const TitleText = styled.h2`
     font-size:1.5rem;
-    color:var(--color-primary-2);
+    color: var(--color-primary-2);
     text-align:center;
     text-transform:uppercase;
     letter-spacing:1px;

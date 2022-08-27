@@ -19,6 +19,7 @@ const LogoImg = styled(Img)`
     height:70px;
     width:auto;
     margin-bottom:1rem;
+    filter: ${props => props.theme.currTheme === 'light' && 'drop-shadow(0 0 1px rgba(0, 0, 0, .1))'};
 `
 
 const Copywright = () => {

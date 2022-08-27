@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-  pathPrefix: "/react-portfolio",
   siteMetadata: {
     title: `Ravi Lamkoti`,
     description: `A passionate full stack web developer.`,

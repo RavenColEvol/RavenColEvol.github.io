@@ -10,7 +10,7 @@ const StyledButton = styled.a`
     border-radius:100px;
     transition:.25s all ease-in-out;
     padding:.8rem 2.5rem;
-    color:white;
+    color: ${props => props.theme.currTheme === 'light' ? 'var(--color-dark-1)' : 'var(--color-white-1)'};
     font-size:.65rem;
     letter-spacing:.0.2rem;
 
@@ -20,7 +20,7 @@ const StyledButton = styled.a`
         letter-spacing:.1rem;
     }
     &:hover{
-        background:var(--color-primary-3);
+        background: var(--color-primary-${props => props.theme.currTheme === 'light' ? '1' : '3'});
         box-shadow:0 18px 24px -12px rgba(8, 152, 200,.5);
         transform:translateY(-3px);
     }
