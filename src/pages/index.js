@@ -9,7 +9,7 @@ import { ThemeSwitchProvider } from '../utils/themeContext';
 
 
 export default function Index() {
-    const [currTheme, setTheme] = useState('light');
+    const [currTheme, setTheme] = useState('dark');
     theme['currTheme'] = currTheme;
     return (
         <ThemeProvider key={currTheme} theme={theme} >
