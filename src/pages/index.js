@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components';
 import {Helmet} from 'react-helmet'
 import GlobalStyles from '../utils/GlobalStyles';
 import theme from '../utils/Theme';
-import favicon from '../images/logo.ico'
+import favicon from '../static/images/logo32.ico'
 import App from '../components/App';
 import { ThemeSwitchProvider } from '../utils/themeContext';
 
