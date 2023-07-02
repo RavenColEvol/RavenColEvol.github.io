@@ -59,7 +59,7 @@ const Navbar = () => {
             <NavWrapper>
                 <Logo/>
                 <DesktopView>
-                <NavItems />
+                    <NavItems />
                 </DesktopView>
                 <Hamburger handleOpen={()=>handleOpen()} isOpen={isOpen}/>
             </NavWrapper>
