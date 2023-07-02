@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[883],{9616:function(e,t,r){r.r(t);var o=r(7294);t.default=function(){return o.createElement("div",null,"Sorry Ravi forgot to add this page ;( ",o.createElement("br",null),o.createElement("a",{href:"/"},"Get back to home page"))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-4de4eafeab7f2fc6e394.js.map
