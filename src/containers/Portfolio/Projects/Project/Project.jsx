@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Button from '../../../../components/Button/Button'
 import Skew from '../../../../components/textUtil/Skew/Skew'
-import svgpack from './../../../../static/Icons/symbol-defs.svg';
+import Icon from '../../../../components/Icon/Icon'
 
 const ProjectWrapper = styled.div`
     display:flex;
@@ -73,9 +73,7 @@ const Project = ({imgurl,children,link,stack,title,reverse}) => {
                 <CenterMobile>
                 <Stack>{stack}</Stack>
                     <Button target="_blank" href={link}>
-                        <svg className={`icon icon-link`} fill='white' width="10px" height="10px">
-                            <use xlinkHref={`${svgpack}#icon-link`}> </use>
-                        </svg> 
+                        <Icon icon='link' className={`icon icon-link`} fill='white' width="10px" height="10px" />
                         <span style={{paddingLeft:5}}>Visit Me</span>
                     </Button>
                 </CenterMobile>

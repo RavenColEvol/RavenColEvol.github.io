@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import styled from 'styled-components'
-import svgpack from './../../static/Icons/symbol-defs.svg';
+import Icon from '../Icon/Icon'
 
 const BackTopIcon = styled.a`
     position:fixed;
@@ -32,7 +32,7 @@ const BackTopIcon = styled.a`
     }
 `
 
-const UpSvg = styled.svg`
+const UpSvg = styled(Icon)`
     width: 25px;
     height: 25px;
     @media ${props=>props.theme.media.medium}
@@ -63,9 +63,7 @@ const BackTop = () => {
     return (
         <BackTopIcon className={show?'show':'hide'} href="#header">
             <Centered>
-                <UpSvg className={`icon icon-circle-up`} fill="white">
-                    <use xlinkHref={`${svgpack}#icon-circle-up`}> </use>
-                </UpSvg>
+                <UpSvg icon="circle-up" className={`icon icon-circle-up`} fill="white" />
             </Centered>
         </BackTopIcon>
     )

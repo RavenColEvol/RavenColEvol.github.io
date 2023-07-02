@@ -17,10 +17,10 @@ const P = styled.p`
 `
 const SocialMediaIcons = () => {
     const socialMediaIcons = [
-        { icon: 'icon-github', href: 'https://github.com/RavenColEvol'},
-        { icon:"icon-linkedin2", href:'https://in.linkedin.com/in/ravi-lamkoti-370285169'},
-        { icon: "icon-google-plus", href: 'https://www.codechef.com/users/lamkoti' },
-        { icon: "icon-instagram", href: 'https://www.instagram.com/nontoxic_raven'},
+        { icon: 'github', href: 'https://github.com/RavenColEvol'},
+        { icon:"linkedin2", href:'https://in.linkedin.com/in/ravi-lamkoti-370285169'},
+        { icon: "google-plus", href: 'https://www.codechef.com/users/lamkoti' },
+        { icon: "instagram", href: 'https://www.instagram.com/nontoxic_raven'},
     ]
 
     return (
