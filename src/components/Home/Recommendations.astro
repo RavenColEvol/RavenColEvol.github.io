@@ -1,0 +1,135 @@
+---
+import dhruv from '../../assets/recommendation/dhruv.jpeg';
+import deepak from '../../assets/recommendation/deepak.jpeg';
+import ankita from '../../assets/recommendation/ankita.jpeg';
+import { Image } from 'astro:assets';
+
+const recommendations = [
+  {
+    recommendation: 'I have collaborated with Ravi during my college projects and we have been a part of the same peer learning group. He is an excellent fullstack developer. He has shown immense passion and dedication towards his work. He never hesitates to help people out and is a very humble person. I highly recommend Ravi for his problem solving abilities, adaptability and work ethic.',
+    person: {
+      name: 'Dhruv Parekh',
+      title: 'SSE @Contentstack',
+      img: dhruv
+    }
+  },
+  {
+    recommendation: `If I have to describe Ravi in one word, it would be "Skilled". I was fortunate to team up with Ravi during our academic course, and subsequently, during our professional journey. He is a great problem solver and a great mentor who believe in uplifting his peers. Ravi would always have his team's back which makes working with him, delightful.`,
+    person: {
+      name: 'Deepak Kharah',
+      title: 'SSE @Contentstack',
+      img: deepak
+    }
+  },
+  {
+    recommendation: `Ravi is truly skilled at what he does. I've always been impressed by his projects and how he manages to create such cool user experiences with dedication. Even though I haven't directly worked with him, we've connected during discussions, and I can say he brings a positive vibe to the whole platform. I love the way he looks at things, It's pretty amazing.! Besides being tech-savvy, Ravi is a down-to-earth guy who's always ready to help others. His passion for his work, adaptability, and strong work ethic not only make him a great team player but also a role model I really look up to.`,
+    person: {
+      name: 'Ankita Dodamani',
+      title: 'Software Engineer @Contentstack',
+      img: ankita
+    }
+  }
+]
+---
+
+<section class="recommendations">
+  <div class="container">
+    <h4 class="gradient">Recommendations</h4>
+    <div class="recommendations__container">
+      {recommendations.map(({ recommendation, person }) => (
+        <div class="card">
+          <span class="recommendation">
+            {recommendation}
+          </span>
+          <div class="person">
+            <Image class="person__img" alt={person.name} src={person.img} />
+            <div class="person__description">
+              <span class="person__description__name skewed">
+                {person.name}
+              </span> <br/>
+              <span class="person__description__title">
+                {person.title}
+              </span>   
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .recommendations {
+    background: #1d1d21;
+    padding: 8rem 2rem;
+
+    &__container {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      align-items: start;
+
+      .card {
+        background: var(--black-primary);
+        padding: 2rem;
+        border-radius: 1rem;
+        font-size: var(--para-font-xs);
+        line-height: 1.4;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+          content: '“';
+          top: -2rem;
+          left: 0;
+          position: absolute;
+          font-size: 10rem;
+          color: transparent;
+          background: var(--gradient);
+          -webkit-background-clip: text;
+          z-index: -1;
+          opacity: .5;
+        }
+        
+        .recommendation {
+          display: block;
+          margin-bottom: 2rem;
+          z-index: 2;
+        }
+
+        .person {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+
+          &__img {
+            border-radius: 50%;
+            width: 4rem;
+            height: 100%;
+          }
+
+          &__description {
+            &__name {
+              font-weight: bold;
+              margin-bottom: .5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .recommendations {
+      &__container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .card {
+        font-size: var(--para-font-sm);
+      }
+    }
+  }
+</style>

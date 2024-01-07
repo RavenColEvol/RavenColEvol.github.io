@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gradient: linear-gradient(90deg, #B16CEA 14.06%, #FF5E69 44.79%, #FF8A56 71.87%, #FFA84B 100%);
+  --black-primary: #161513;
+  --black-secondary: #1C1C22;
+  --white-primary: #F0F2F5;
+  --white-secondary: #ffffff;
+
+  --secondary-font: 'Bai Jamjuree', sans-serif;
+  --primary-font: 'Inter Variable', sans-serif;
+
+  --para-font-xs: 1.4rem;
+  --para-font-sm: 1.6rem;
+  --para-font-md: 1.8rem;
+  --para-font-lg: 3.2rem;
+}
+
+html {
+  font-size: 62.5%;
+  color: var(--black-primary);
+}
+
+@media only screen and (max-width:80em) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media only screen and (max-width:56em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width:25em) {
+  html {
+    font-size: 46%;
+  }
+}
+
+body {
+  font-size: var(--para-font-sm);
+  line-height: 1.6;
+  font-family: var(--primary-font);
+  color: var(--white-primary);
+  background: var(--black-primary);
+  overflow-x: hidden;
+}
+
+a, ul, li {
+  text-decoration: none;
+  color: var(--white-primary);
+}
+
+button {
+  outline: none;
+  border: none;
+}

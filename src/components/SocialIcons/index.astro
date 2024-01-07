@@ -1,0 +1,93 @@
+---
+import { Icon } from 'astro-icon'
+
+const { dir = 'left' } = Astro.props;
+
+const social = [
+  { icon: "social/github", href: "https://github.com/RavenColEvol" },
+  { icon: "social/linkedIn", href: "https://www.linkedin.com/in/ravi-lamkoti/" },
+  { icon: "social/codepen", href: "https://codepen.io/ravencolevol" },
+  { icon: "social/leetcode", href: "https://leetcode.com/nontoxic/" },
+];
+---
+
+<div class="flex">
+  {
+    social.map((action) => (
+      <a 
+      class:list={["social-link", `margin-${dir}`]}
+      target='_blank' href={action.href}>
+        <Icon name={action.icon} />
+      </a>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .margin-left {
+    margin-left: 2rem;
+  }
+
+  .margin-right {
+    margin-right: 2rem;
+  }
+
+  .social-link {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    fill: var(--white-primary);
+    color: var(--white-primary);
+    padding: .4rem;
+    transition: .15s all ease-in-out;
+
+    svg {
+      width: 100%;
+    }
+
+    &:hover {
+      color: var(--white-secondary);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    &::before {
+      z-index: -1;
+      background: #020202;
+    }
+
+    &::after {
+      transform: scale(1.1);
+      z-index: -2;
+      background: var(--gradient);
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .social-link {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .margin-left {
+      margin-left: 1.5rem;
+    }
+
+    .margin-right {
+      margin-right: 1.5rem;
+    }
+  }
+</style>

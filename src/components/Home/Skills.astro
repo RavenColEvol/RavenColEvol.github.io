@@ -1,0 +1,115 @@
+---
+import { Icon } from 'astro-icon'
+const skills = [
+  {
+    category: 'Frontend',
+    icons: [
+      'javascript',
+      'typescript',
+      'reactjs',
+      'webpack',
+      'rollup',
+      'redux',
+      'reactQuery'
+    ]
+  },
+  {
+    category: 'Backend',
+    icons: [
+      'node',
+      'express',
+      'nest',
+      'mongodb',
+      'graphql',
+      'redis',
+      'sqs',
+      'websocket'
+    ]
+  },
+  {
+    category: 'Devops',
+    icons: [
+      'docker',
+      'kubernetes'
+    ]
+  },
+  {
+    category: 'Others',
+    icons: [
+      'git',
+      'jest',
+      'playwright',
+    ]
+  }
+];
+---
+
+<section class="skills container">
+  <h4 class="gradient">What I Do</h4>
+  <ul class="skills__category">
+    {skills.map(({ category, icons }) => (
+      <li class="skills__category__item">
+        <span class="category skewed">{category}</span><br/>
+        {icons.map(iconName => 
+          <Icon 
+            title={iconName}
+            class="skills__icon" 
+            name={iconName} 
+          />
+        )}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style lang="scss">
+  .skills {
+    padding: 8rem 2rem;
+
+    &__category {
+      margin-top: 4rem;
+
+      &__item {
+        list-style-type: none;
+        padding: 2rem 0;
+        border-bottom: .2rem solid white;
+
+        &:first-child {
+          border-top: .2rem solid white;
+        }
+
+        .category {
+          font-weight: bold;
+          font-size: var(--para-font-md);
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          letter-spacing: .2rem;
+        }
+
+        .skills__icon {
+          height: 6rem;
+          margin-right: 1rem;
+          cursor: pointer;
+          transition: .2s all ease-in-out;
+
+          &:hover {
+            transform: translateY(-15%);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .skills {
+      &__category {
+        &__item {
+          .skills__icon {
+            height: 4.5rem;
+            margin-right: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+</style>

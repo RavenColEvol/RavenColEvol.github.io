@@ -1,0 +1,16 @@
+---
+import styles from './style.module.scss';
+const { type } = Astro.props;
+const isPrimary = type === 'primary';
+const isSecondary = type === 'secondary';
+---
+
+<a class:list={[
+  styles.button, 
+  { 
+    [styles.primary]: isPrimary,
+    [styles.secondary]: isSecondary
+  },
+]}>
+  <slot></slot>
+</a>

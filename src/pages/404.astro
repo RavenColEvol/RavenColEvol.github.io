@@ -1,0 +1,50 @@
+---
+import '../styles/index.scss';
+import Layout from '../layouts/index.astro'
+import Navbar from '../components/Navbar/index.astro'
+import Footer from '../components/Footer/index.astro'
+import Button from '../components/Button/index.astro'
+import NotFoundSVG from '../assets/404.svg?raw'
+---
+
+<Layout title="Portfolio">
+	<Navbar />
+  <div class="nf-container container">
+    <div class="nf-icon">
+      <Fragment set:html={NotFoundSVG} />
+    </div>
+    <div class="nf-content">
+      <h1 class="cta">404</h1>
+      <h5>Page Not Found</h5>
+      <Button type="primary">Back To Homepage</Button>
+    </div>
+  </div>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+.nf-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .nf-icon {
+    width: 50%;
+  }
+
+  & .nf-content {
+    text-align: center;
+    padding: 0 2rem;
+    margin-left: 4rem;
+
+    & h1 {
+      margin-bottom: 1rem;
+    }
+
+    & h5 {
+      margin-bottom: 3rem;
+    }
+  }
+}
+</style>

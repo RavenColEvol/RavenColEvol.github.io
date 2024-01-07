@@ -1,0 +1,31 @@
+---
+import '../styles/index.scss';
+import '@fontsource-variable/inter';
+import '@fontsource/bai-jamjuree/700.css';
+import Layout from '../layouts/index.astro'
+import Navbar from '../components/Navbar/index.astro'
+import Footer from '../components/Footer/index.astro'
+
+import Header from '../components/Header/index.astro'
+import Band from '../components/Band/index.astro'
+
+import { Projects, WorkExp, Skills, Recommendations } from '../components/Home/index.astro'
+---
+
+<Layout title="Portfolio">
+	<Navbar />
+  <div class="container">
+    <Header />
+  </div>
+  <Band tokens={['Innovate', 'Design', 'Develop']}/>
+  <main>
+    <Projects />
+    <WorkExp />
+    <Skills />
+    <Recommendations />
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+</style>

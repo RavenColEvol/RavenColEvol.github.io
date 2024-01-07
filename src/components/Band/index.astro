@@ -1,0 +1,65 @@
+---
+const { tokens } = Astro.props;
+const repeat = (arr, n) => Array(n).fill(arr).flat();
+const repeatedTokens = repeat(tokens, 5);
+---
+
+<div class='band'>
+  <div class='gradient-bg' />
+  <div class='white-bg'>
+    {repeatedTokens.map(token => <span class='token'>{token}</span>)}
+  </div>
+</div>
+
+
+<style lang='scss'>
+  .band {
+    color: var(--black-primary);
+    position: relative;
+    height: 8rem;
+    max-width: 108rem;
+    margin: 0 auto;
+
+    & .gradient-bg, & .white-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    & .gradient-bg {
+      background: var(--gradient);
+      z-index: -1;
+      height: 100%;
+    }
+
+    & .white-bg {
+      background: var(--white-primary);
+      z-index: 1;
+      transform: translateY(1rem) rotate(-2deg);
+      padding: 2rem 0;
+      display: flex;
+      overflow: hidden;
+    }
+
+    & .token {
+      font-size: var(--para-font-lg);
+      font-family: var(--secondary-font);
+      font-weight: 600;
+      display: inline-block;
+      margin-left: 6rem;
+      position: relative;
+      transform: translateX(-8rem);
+
+      &::before {
+        content: '✦';
+        color: transparent;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        position: absolute;
+        left: -3rem;
+        transform: translateX(-50%);
+      }
+    }
+  }
+</style>

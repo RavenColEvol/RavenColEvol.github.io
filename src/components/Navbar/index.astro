@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.png';
+const actions = [
+  // { text: 'Home', href: '/' },
+  // { text: 'Blog', href: '/blogs' }
+]
+---
+
+<nav>
+  <div class='container nav-container'>
+    <div class='action__container'>
+      <span class="logo">
+        <Image src={logo} alt="Logo" />
+      </span>
+      {actions.map(action => {
+        return (
+          <a href={action.href}>{action.text}</a>
+        )
+      })}
+    </div>
+    <a 
+      target="_blank"
+      href="https://www.linkedin.com/in/ravi-lamkoti/" class="cta">
+      Let's Talk
+    </a>
+  </div>
+</nav>
+
+<style lang="scss">
+  nav {
+    background: var(--black-primary);
+    color: white;
+    padding: 2rem 0;
+
+    & .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    & .logo {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        max-width: 5rem;
+        height: auto;
+      }
+    }
+
+    & .action__container {
+      display: flex;
+
+    }
+
+    & .action__container a {
+      display: inline-block;
+      color: white;
+      margin-right: 1rem;
+      cursor: pointer;
+      padding: 1rem 1rem;
+    }
+  }
+
+  a.cta {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background: var(--white-primary);
+    color: var(--black-primary);
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+  }
+</style>

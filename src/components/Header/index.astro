@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+
+import SocialIcons from '../SocialIcons/index.astro'
+
+import profilePic from '../../assets/pp.png';
+
+const header = {
+  name: 'Ravi Lamkoti',
+  description: {
+    title: 'Senior Software Engineer',
+    at: 'Contentstack',
+    experience: 'Web Technologies, Backend, Microservice and CI/CD pipelines.'
+  }
+}
+---
+
+<header>
+  <div class="content">
+    <h3>
+      <span class="gradient">
+        Hello, <br/>
+        I'm {header['name']}
+      </span>
+    </h3>
+    <h5>I'm a <span class="skewed">passionate Software Engineer</span></h5>
+
+    <p class="description">
+      Currently I'm working as a 
+      <span class="gradient">{header['description']['title']}</span> <span style="font-weight: 500" class="skewed">@{header['description']['at']}</span>. <br/> 
+      I've a good experience in {header['description']['experience']}
+    </p>
+
+    <SocialIcons dir="right" />
+  </div>
+  <Image class='portfolio-pic' src={profilePic} alt="Ravi Lamkoti's Portfolio Picture"/>
+</header>
+
+
+<style lang="scss">
+  header {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 8rem;
+    padding: 2rem;
+
+    & .content {
+      flex: 1 1;
+      width: 60%;
+    }
+    & .content h5 {
+      margin-bottom: 4rem;
+    }
+
+    .description {
+      margin-bottom: 3rem;
+    }
+
+    & .portfolio-pic {
+      display: inline-block;
+      width: 40%;
+      max-width: 40%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (max-width:56em) {
+    header {
+      & .portfolio-pic {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width:56em) {
+      header {
+
+        & .content h5 {
+          font-size: 2.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .description {
+          font-size: var(--para-font-md);
+        }
+      }
+    }
+  }
+</style>

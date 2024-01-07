@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import SocialIcons from '../SocialIcons/index.astro'
+import logo from '../../assets/logo.png';
+
+const actions = [
+  { text: 'Home', href: '/' }
+]
+---
+
+<footer>
+  <div class='container'>
+    <div class="divider"></div>
+
+    <div class="flex space-between align-center">
+      <span class="logo">
+        <Image src={logo} alt="Logo" />
+      </span>
+      <div class="flex">
+        {actions.map(action => 
+          <a 
+            target="_blank"
+            class="action-link" 
+            href={action.href}
+          >{action.text}</a>
+        )}
+      </div>
+    </div>
+
+    <div class="design-container flex space-between align-center">
+      <span class="designed-by">
+        Developed by Ravi Lamkoti
+      </span>
+      <SocialIcons />
+    </div>
+
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    padding: 2rem;
+    background: var(--black-primary);
+    color: var(--white-primary);
+
+    & .logo {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        max-width: 5rem;
+        height: auto;
+      }
+    }
+
+    & .action-link {
+      display: inline-block;
+      margin-left: 1rem;
+      padding: 1rem 1rem;
+    }
+
+    .design-container {
+      margin-top: 2rem;
+    }
+
+    .container {
+    }
+    
+    & .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--white-primary);
+      margin-bottom: 2rem;
+    }
+  }
+</style>

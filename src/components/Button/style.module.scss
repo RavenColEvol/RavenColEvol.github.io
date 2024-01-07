@@ -1,0 +1,21 @@
+.button {
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--para-font-sm);
+  font-weight: 500;
+}
+
+.primary {
+  background: var(--gradient);
+  color: var(--white-secondary);
+  text-transform: uppercase;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--white-secondary);
+  border: .2rem solid var(--white-secondary);
+  text-transform: uppercase;
+}

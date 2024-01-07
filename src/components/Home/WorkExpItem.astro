@@ -1,0 +1,107 @@
+---
+interface Props {
+  experience: {
+    company: string;
+    location: string;
+    work: {
+      title: string;
+      duration: string[];
+      points: string[]
+    }[]
+  }
+}
+const { experience } = Astro.props;
+const { company, location, work } = experience;
+---
+
+<div class="exp__item">
+  <div class="exp__item__title">
+    <div class="exp__item__title__at">
+      <span class="company gradient">{company}</span>
+    </div>
+    <span class="location">{location}</span>
+  </div>
+
+  <div 
+    class="exp__item__work"
+  >
+    {work.map(({ title, points, duration }) => (
+      <div class="exp__item__work__container">
+        <div class="flex space-between">        
+          <span class="title skewed">{title}</span>
+          <span class="duration">{duration.join(' - ')}</span>
+        </div>
+        
+        <ul class="work__done">
+          {points.map(point => 
+            <li class="work__done__point">{point}</li>
+          )}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+<style lang="scss">
+  .exp__item {
+    border-bottom: 0.2rem solid white;
+    
+    &__title {
+      padding: 2rem 0 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__at {
+        .company {
+          font-family: var(--secondary-font);
+          font-size: 3.2rem;
+          font-weight: 600;
+          margin-right: .5rem;
+        }
+      }
+    }
+
+    &__work {
+      font-size: var(--para-font-xs);
+
+      &__container {
+        margin-bottom: 1.5rem;
+
+        .title {
+          font-weight: bold;
+        }
+
+        ul {
+          padding: 0 1.5rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      &--hidden {
+        display: none;
+      }
+    }
+
+    .location, .duration {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-color: var(--white-primary);
+    }
+
+    .duration {
+      font-weight: bold;
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .exp__item__work {
+      font-size: var(--para-font-sm);
+    }
+
+    .location, .duration {
+      font-size: var(--para-font-sm);
+    }
+  }
+</style>

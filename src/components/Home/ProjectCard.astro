@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+const { project } = Astro.props;
+const { title, description, cover, tech_stack } = project;
+---
+
+<div class="project__card">
+  <Image
+    class='project__card__cover'
+    src={cover}
+    alt={title}
+  />
+  <div class="project__card__description">
+    <h6>{title}</h6>
+    <span class="tech__stack">
+      {tech_stack.map(skill => skill).join(' ')}
+    </span>
+  </div>
+</div>
+
+
+<style lang="scss">
+  .project__card {
+    background: #1d1c20;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &__cover {
+      max-width: 100%;
+      height: 20rem;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__description {
+      padding: 1rem 2rem;
+
+      h6 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech__stack {
+        line-height: 1.4;
+        font-size: 1.2rem;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .project__card {
+      &__description {
+        h6 {
+          font-size: 2.4rem;
+        }
+        .tech__stack {
+          font-size: var(--para-font-sm);
+        }
+      }
+    }
+  }
+</style>

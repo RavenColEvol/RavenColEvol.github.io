@@ -1,0 +1,89 @@
+---
+import ProjectCard from './ProjectCard.astro'
+import mernImg from '../../assets/projects/career.webp'
+import bootstrapImg from '../../assets/projects/bootstrap.webp'
+import fuddulistImg from '../../assets/projects/fuddulist.webp'
+import blockchainImg from '../../assets/projects/blockchain.webp'
+
+const projects = [
+  {
+    cover: mernImg,
+    title: 'MERN Course App',
+    description: 'Created course site using MERN stack. Used Antd and redux on frontend and fuzzy searching on backend. A project site which uses automated script written in Node.js and Cheerio for scrapping course details from udemy site from link. Whole frontend is made on Antd with multiple routing pages.',
+    tech_stack: ['Node', 'MongoDb', 'React', 'ReactRouter', 'API', 'HTML5', 'CSS3', 'BOOTSTRAP4']
+  },
+  {
+    cover: bootstrapImg,
+    title: 'Dark Bootstrap',
+    description: `This is more of a frontend project I made to fulfill my need of having a css file which can easily turn any bootstrap project to dark mode easily. I didn't find any such project online so I thought to create one by myself.`,
+    tech_stack: ['HTML5', 'CSS3', 'JS', 'BOOTSTRAP4']
+  },
+  {
+    cover: fuddulistImg,
+    title: 'Fuddu List',
+    description: `This whole I created within few days that too from scratch and didn't followed any tutorial for that . I'm happy with this yet another todo app i created, it looks clean and gives feedback through alert. I've used antd and it was the first time I've used formik and yup .`,
+    tech_stack: ['React', 'Express', 'Mongodb', 'Redux', 'Antd']
+  },
+  {
+    cover: blockchainImg,
+    title: 'Node Js Blockchain',
+    description: `After Hackathon 2018 held in my college one of my class mate made a "Decenteralised Voting System" at that time I didn't knew what blockchain is what decenteralise mean but looking curious faces of judge in that project also kindled me to checkout what actually blockchain is, after that i found one course on udemy Creating Blockchain with javascript I decided to take that course and learnt many thing about blockchain technology and I've decided to be a blockchain developer in future.`,
+    tech_stack: ['Node', 'js', 'HTML5', 'CSS', 'BOOTSTRAP']
+  },
+]
+---
+
+<section class='projects container'>
+
+  <div class='projects__description'>
+    <h4>
+      <span class='gradient'>Selected Projects<span>
+    </h4>
+  </div>
+
+  <div class="projects__container">
+    {projects.map(project => <ProjectCard project={project} />)}
+  </div>
+
+</section>
+
+<style lang='scss'>
+  .projects {
+    padding: 8rem 2rem;
+
+    &__description {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      flex: 1 1;
+
+      span {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+    }
+  }
+
+  @media only screen and (max-width:56em) {
+    .projects {
+      &__container {
+        gap: 4rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width:37.5em) {
+    .projects {
+      &__container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+    }
+  }
+</style>

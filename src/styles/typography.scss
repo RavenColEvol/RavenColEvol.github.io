@@ -1,0 +1,70 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--secondary-font);
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 7.2rem;
+  line-height: 1.25;
+}
+
+h1.cta {
+  font-size: 8.4rem;
+  line-height: 1;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 5.6rem;
+  line-height: 1.25;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 1.25;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 3.2rem;
+  line-height: 1.25;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+
+.para-sm {
+  font-family: var(--primary-font);
+  font-size: var(--para-font-sm);
+  line-height: 1.5rem;
+}
+
+.para-18 {
+  font-family: var(--primary-font);
+  font-size: var(--para-font-md);
+  line-height: 3rem;
+}
+
+.big-para {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: var(--para-font-lg);
+  line-height: 3.8rem;
+}
+
+.mobile-big-para {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 1.25;
+}

@@ -1,0 +1,78 @@
+---
+import WorkExpItem from "./WorkExpItem.astro";
+const experiences = [
+  {
+    company: 'Contentstack',
+    location: 'Virar, India',
+    work: [
+      {
+        title: 'Senior Software Engineer',
+        duration: ['Feb 2023', 'Present'],
+        points: [
+          `Created microservice for extension framework using Nest.js. Involving multiple components like Kafka, Amazon SQS, Rabbit MQ, etc.`,
+          `Design and maintain live editor for website to preview live changes of the content also allowing user to edit content on the page itself.`
+        ]
+      },
+      {
+        title: 'Software Engineer 2',
+        duration: ['July 2021', 'Feb 2023'],
+        points: [
+          'Worked on creating backend routes for RTE on express.js and microservices on nest.js, elastic consumer, etc.', 
+          'Take end-to-end responsibility for the features.', 
+          'Setted standard design patterns in the UI code. ', 
+          'Written optimized code for avoiding unwanted rerenders using React advance features.'
+        ]
+      },
+      {
+        title: 'Fullstack Consultant',
+        duration: ['Aug 2020', 'July 2021'],
+        points: [
+        'Worked on creating complex features like RTE, Markdown Editor, Live Preview.',
+        'Actively used by not less than 1000+ concurrent active users.'
+        ]
+      }
+    ]
+  },
+  {
+    company: 'Career Climber',
+    location: 'India',
+    work: [
+      {
+        title: 'Software Engineer Intern	',
+        duration: ['July 2020', ' Aug 2020'],
+        points: [
+          'Headed the development of  complete frontend right from Figma to creating UI in React.js. ', 
+          'Implemented full text search functionality on backend with E2E testing.', 
+          'Implemented important routes which were responsible for efficiently scraping data from courses like Udemy etc to automatically create posts.']
+      }
+    ]
+  }
+]
+---
+<section class="wexp">
+  <div class="container">
+    <div class="wexp__description">
+      <h4 class="gradient">Work Experience</h4>
+    </div>
+    <div class="wexp__list">
+      {experiences.map(experience => 
+        <WorkExpItem experience={experience} />
+      )}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .wexp {
+    background: #1d1d21;
+    padding: 8rem 0;
+
+    .container {
+      padding: 0 2rem;
+    }
+    &__list {
+      margin-top: 4rem;
+      border-top: .2rem solid white;
+    }
+  }
+</style>
