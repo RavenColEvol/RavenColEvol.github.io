@@ -4,7 +4,7 @@ const { project } = Astro.props;
 const { title, description, href, cover, tech_stack } = project;
 ---
 
-<a href={href} class="project__card">
+<a target="_blank" href={href} class="project__card">
   <Image
     class='project__card__cover'
     src={cover}
