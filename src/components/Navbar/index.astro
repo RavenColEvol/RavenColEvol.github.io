@@ -10,9 +10,9 @@ const actions = [
 <nav>
   <div class='container nav-container'>
     <div class='action__container'>
-      <span class="logo">
+      <a class="logo" href="/">
         <Image src={logo} alt="Logo" />
-      </span>
+      </a>
       {actions.map(action => {
         return (
           <a href={action.href}>{action.text}</a>
