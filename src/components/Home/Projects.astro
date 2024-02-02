@@ -2,10 +2,17 @@
 import ProjectCard from './ProjectCard.astro'
 import mernImg from '../../assets/projects/career.webp'
 import bootstrapImg from '../../assets/projects/bootstrap.webp'
-import fuddulistImg from '../../assets/projects/fuddulist.webp'
+import linkedinCarouselGenerator from '../../assets/projects/linkedin-carousel-generator.png';
 import blockchainImg from '../../assets/projects/blockchain.webp'
 
 const projects = [
+  {
+    cover: linkedinCarouselGenerator,
+    title: 'Linked In Carousel Generator',
+    href: 'https://ravencolevol.github.io/linked_in-post-generator/',
+    description: `Created a useful utility app to create stunning Linked In Carousels with few clicks and have a great UI. After you are happy with your edit you could download copiable PDF's instead of DOM screenshots`,
+    tech_stack: ['React', 'AntD', 'ReactBeautifulDND', 'React-PDF']
+  },
   {
     cover: mernImg,
     title: 'MERN Course App',
@@ -19,13 +26,6 @@ const projects = [
     href: 'https://codepen.io/ravencolevol/full/NWWXaBB',
     description: `This is more of a frontend project I made to fulfill my need of having a css file which can easily turn any bootstrap project to dark mode easily. I didn't find any such project online so I thought to create one by myself.`,
     tech_stack: ['HTML5', 'CSS3', 'JS', 'BOOTSTRAP4']
-  },
-  {
-    cover: fuddulistImg,
-    title: 'Fuddu List',
-    href: 'https://fuddulist.herokuapp.com/',
-    description: `This whole I created within few days that too from scratch and didn't followed any tutorial for that . I'm happy with this yet another todo app i created, it looks clean and gives feedback through alert. I've used antd and it was the first time I've used formik and yup .`,
-    tech_stack: ['React', 'Express', 'Mongodb', 'Redux', 'Antd']
   },
   {
     cover: blockchainImg,
