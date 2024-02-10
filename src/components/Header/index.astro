@@ -49,6 +49,13 @@ const header = {
     & .content {
       flex: 1 1;
       width: 60%;
+
+      & h3 {
+        opacity: 0;
+        animation: slideRight .3s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: .2s;
+      }
     }
     & .content h5 {
       margin-bottom: 4rem;
@@ -63,6 +70,17 @@ const header = {
       width: 40%;
       max-width: 40%;
       height: auto;
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      transform: translateX(-15%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 

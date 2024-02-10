@@ -43,14 +43,10 @@ const social = [
     fill: var(--white-primary);
     color: var(--white-primary);
     padding: .4rem;
-    transition: .15s all ease-in-out;
+    transition: .2s all ease-in-out;
 
     svg {
       width: 100%;
-    }
-
-    &:hover {
-      color: var(--white-secondary);
     }
 
     &::before,
@@ -67,6 +63,14 @@ const social = [
     &::before {
       z-index: -1;
       background: #020202;
+    }
+
+    &:hover::before {
+      background: var(--white-secondary);
+    }
+
+    &:hover {
+      color: #020202;
     }
 
     &::after {
