@@ -1,0 +1,81 @@
+---
+const { title, link, pubDate: _pubDate, description, categories } = Astro.props;
+const imgURL = /src\="([^\""]*)/.exec(description)![1];
+const pubDate = new Date(_pubDate).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+---
+
+<a href={link} class="blog-item">
+  <img src={imgURL} alt={title}>
+  <div class="blog-item--description">
+    <h5 class="gradient">{title}</h5>
+    <div class="tags">
+      {categories.map(category => <span class="pill">{category}</span>)}
+    </div>
+    <span class="publish-date">Published on: {pubDate}</span>
+  </div>
+</a>
+
+
+<style lang="scss">
+  .blog-item {
+    display: flex;
+    padding: 2rem;
+    background: #1c1c22;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    gap: 4rem;
+    cursor: pointer;
+
+    img {
+      max-width: 45%;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    &--description {
+      padding: 2rem 0;
+
+      h5 {
+        margin-bottom: 2rem;
+      }
+
+      .tags {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-flow: row wrap;
+        gap: .8rem;
+        font-size: 1.2rem;
+  
+        & .pill {
+          display: inline-block;
+          padding: .5rem 1rem;
+          background: white;
+          color: var(--black-primary);
+          border-radius: 2rem;
+          font-weight: 600;
+        }
+      }
+
+      .publish-date {
+        font-size: 1.4rem;
+        color: var(--white-primary);
+      }
+    }
+
+  }
+
+  @media only screen and (max-width:36em) {
+    .blog-item {
+      flex-direction: column;
+      gap: .5rem;
+
+      img {
+        max-width: 100%;
+      }
+
+      &--description {
+        padding: 1rem 0;
+      }
+    }
+  }
+</style>

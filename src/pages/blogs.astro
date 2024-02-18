@@ -1,0 +1,38 @@
+---
+import '../styles/index.scss';
+import '@fontsource-variable/inter';
+import '@fontsource/bai-jamjuree/700.css';
+import Layout from '../layouts/index.astro'
+import Navbar from '../components/Navbar/index.astro'
+import Footer from '../components/Footer/index.astro'
+import BlogItem from '../components/BlogItem/BlogItem.astro';
+
+const mediumJSON = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ravilamkoti').then(res => res.json());
+const { items } = mediumJSON;
+---
+
+<Layout 
+  title="Blogs"
+  description="I sometimes write blogs here are my recent blogs"
+  img="/preview.png"
+>
+	<Navbar />
+  <main class="container">
+    {items.map(item => <BlogItem 
+      title={item.title}
+      link={item.link}
+      pubDate={item.pubDate}
+      description={item.description}
+      categories={item.categories}
+    />)}
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @media only screen and (max-width:56em) {
+    .container {
+      padding: 2rem;
+    }
+  }
+</style>

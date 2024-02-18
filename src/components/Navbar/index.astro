@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo.png';
 const actions = [
-  // { text: 'Home', href: '/' },
-  // { text: 'Blog', href: '/blogs' }
+  { text: 'Home', href: '/' },
+  { text: 'Blogs', href: '/blogs' }
 ]
 ---
 
@@ -15,7 +15,9 @@ const actions = [
       </a>
       {actions.map(action => {
         return (
-          <a href={action.href}>{action.text}</a>
+          <a class="nav-link" href={action.href}>
+            <span class="nav-link--hover">{action.text}</span>
+          </a>
         )
       })}
     </div>
@@ -55,14 +57,45 @@ const actions = [
     & .action__container {
       display: flex;
 
+      & .nav-link {
+        
+        &--hover {
+          z-index: 3;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: .4rem;
+            bottom: .4rem;
+            left: 0;
+            background: var(--gradient);
+            opacity: .8;
+            z-index: -1;
+            transition: all .3s ease-in-out;
+          }
+
+        }
+
+        &:hover {
+          
+          .nav-link--hover::before {
+            height: 100%;
+            bottom: 0;
+          }
+        }
+      }
     }
 
     & .action__container a {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       color: white;
       margin-right: 1rem;
       cursor: pointer;
       padding: 1rem 1rem;
+      position: relative;
     }
   }
 
