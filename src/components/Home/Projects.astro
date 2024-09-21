@@ -3,9 +3,16 @@ import ProjectCard from './ProjectCard.astro'
 import mernImg from '../../assets/projects/career.webp'
 import bootstrapImg from '../../assets/projects/bootstrap.webp'
 import linkedinCarouselGenerator from '../../assets/projects/linkedin-carousel-generator.png';
-import blockchainImg from '../../assets/projects/blockchain.webp'
+import virtualIg from '../../assets/projects/virtual-ig.webp'
 
 const projects = [
+  {
+    cover: virtualIg,
+    title: 'Virtual IG',
+    href: 'https://virtual-ig.vercel.app/#/',
+    description: 'Experience seamless collaboration with our real-time coding editor designed for technical interviews. Create private rooms, share a simple link with your interviewees, and instantly start coding together. Both interviewer and interviewee can view and write code in real-time, eliminating the need for screen sharing and providing a distraction-free, interactive coding environment. Perfect for remote technical interviews, pair programming, and collaborative coding sessions.',
+    tech_stack: ['Nest.js', 'YJS', 'Websocket', 'Slate.js', 'React.js']
+  },
   {
     cover: linkedinCarouselGenerator,
     title: 'Linked In Carousel Generator',
@@ -26,13 +33,6 @@ const projects = [
     href: 'https://codepen.io/ravencolevol/full/NWWXaBB',
     description: `This is more of a frontend project I made to fulfill my need of having a css file which can easily turn any bootstrap project to dark mode easily. I didn't find any such project online so I thought to create one by myself.`,
     tech_stack: ['HTML5', 'CSS3', 'JS', 'BOOTSTRAP4']
-  },
-  {
-    cover: blockchainImg,
-    title: 'Node Js Blockchain',
-    href: 'https://github.com/RavenColEvol/blockchain-javascript-completed',
-    description: `After Hackathon 2018 held in my college one of my class mate made a "Decenteralised Voting System" at that time I didn't knew what blockchain is what decenteralise mean but looking curious faces of judge in that project also kindled me to checkout what actually blockchain is, after that i found one course on udemy Creating Blockchain with javascript.`,
-    tech_stack: ['Node', 'js', 'HTML5', 'CSS', 'BOOTSTRAP']
   },
 ]
 ---
